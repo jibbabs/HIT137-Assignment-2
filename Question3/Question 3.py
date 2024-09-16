@@ -1,6 +1,12 @@
-#key Code       
-"""
-def getkey():
+#Question 3
+#Group Name: CAS003
+#Group Members:
+#[Alex Tarrant] - [S255441]
+#[Jason Yun] - [S364369]
+
+"""----- 3.1 -----"""
+#Key code generator for Encryption/decryption functions      
+def getkey(): #The original code was converted into a function to ouput a key value when called.
     total = 0
     for i in range(5):
         for j in range(3):
@@ -18,11 +24,9 @@ def getkey():
         else:
             counter += 2  
     
-    return total  """
+    return total  
 
-
-"""
-#Encrypt code
+#Encrypt code function.
 def encrypt(text, key):
     encrypted_text = ""
     for char in text:
@@ -41,10 +45,12 @@ def encrypt(text, key):
             encrypted_text += chr(shifted)
         else:
             encrypted_text += char
-    return encrypted_text"""
+    return encrypted_text
 
-#Decrypt code
-"""
+
+"""----- 3.2 -----"""
+#Decrypt code function.
+#The original encryption code was reversed to create the decryption code. Some changes were required to seperate the letters and carry out the isalpha function.
 def decrypt(text, key):
     decrypted_text = ""
     count = 0
@@ -72,62 +78,22 @@ def decrypt(text, key):
     return decrypted_text 
 
 key = getkey()
-readtext = open("encrypted_code.txt",'r')
+#The decryption code opens a text file named encrypted_code that contains the encrypted code.
+readtext = open("HIT137-Assignment-2\Question3\encrypted_code.txt",'r')
+
+#The decryption code then decrypts the code with the key and writes it to another text file name Decoded_text.
 decrypted_code = decrypt(readtext, key)
-writefile = open("Decoded_text.txt", 'w')
+writefile = open("HIT137-Assignment-2\Question3\Decoded_text.txt", 'w')
 writefile.write(decrypted_code)
 writefile.close  
  
-#Encrypted code"""
-
-"""
-tybony_inevnoyr = 100
-zl_qvpg = {'xr11': 'inyhr1', 'xr12': 'inyhr2', 'xr13': 'inyhr3'}
-
-qrs cebprff_ahzoref():
-    tybony tybony_inevnoyr 
-    ybpny_inevnoyr = 5
-    ahzoref= [1, 2, 3, 4, 5]
-    
-    juvyr ybpny_inevnoyr > >:
-        vs ybpny_inevnoyr % 2 == 0: 
-            ahzoref.erzbir(ybpny_inevnoyr)
-        ybpny_inevnoyr = 1
-    
-    erghea ahzoref
-    
-zl_frg = {1, 2, 3, 4, 5, 5, 4, 3, 2, 1} 
-erfhyg= cebprff_ahzoref (ahzoref=zl_frg)
-
-qrs zbqvsl_qvpg():
-    ybpny_inevnoyr = 10 
-    zl_qvpg['xr14'] = ybpny_inevnoyr
-    
-zbqvsl_qvpg(5)
-
-qrs hcqngr_tybony():
-    tybony tybony_inevnoyr
-    tybony_inevnoyr += 10
-    
-sbe v va enatr(5):
-    cevag(v)
-    V += 1
-
-vs z1_frg vf abg Abar naq z1_qvpg['xr14'] == 10: 
-    cevag("Pbaqvgvba zrg!")
-    
-vs 5 abg va zl_qvpg:
-    cevag("5 abg sbhaq va gur qvpgvbanel!")
-    
-cevag(tybony_inevnoyr)
-cevag(zl_qvpg)
-cevag(zl_frg)"""
-
+"""----- 3.3 -----"""
 #Decrypted Code
-#Edits are explained in comments below
+#The decrypted code was extracted from the Decoded_text file from the previous function and entered below.
+#The corrections are outlined in the comments.
 my_dict = {'ke11': 'value1', 'ke12': 'value2', 'ke13': 'value3'}
 
-global_variable = 0 #Moved the definition of global_variable out of the function
+global_variable = 0 #Moved the definition of global_variable out of the function.
 
 def process_numbers():
     local_variable = 5
@@ -140,11 +106,11 @@ def process_numbers():
     
     return numbers
     
-my_set = {1, 2, 3, 4, 5, 5, 4, 3, 2, 1} 
-result = process_numbers () #Removed the argument given to the function
+my_set = {1, 2, 3, 4, 5, 5, 4, 3, 2, 1}
+result = process_numbers () #Removed the argument given to the function.
 
-def modify_dict(new_value): #Added an argument to the function
-    local_variable = new_value #Removed the local_variable set value of 10 , made it equal to new_value that gets assigned a value from the argument.
+def modify_dict(new_value): #Added a parameter to the function.
+    local_variable = new_value #Removed the local_variable set value of 10 , made it equal to new_value which gets assigned a value when the function is called.
     my_dict['ke14'] = local_variable
     
 modify_dict(5) 
@@ -153,16 +119,16 @@ def update_global():
     global global_variable
     global_variable += 10
  
-update_global() #Added to carry out the function 
+update_global() #Added to carry out the function.
     
-for i in range(5): #Changed uppercase I to lower case i  
+for i in range(5): #Changed uppercase I to lower case i.
     print(i)
     i += 1
 
-if my_set is not None and my_dict['ke14'] == 10: #Corrected m1 typo for both variables to my
+if my_set is not None and my_dict['ke14'] == 10: #Corrected m1 typo for both variables to my.
     print("Condition met!")
     
-if 5 not in my_dict.values(): #Added values attribute to check the my_dict Values instead of keys
+if 5 not in my_dict.values(): #Added values attribute to check the my_dict Values instead of keys.
     print("5 not found in the dictionary!")
     
 print(global_variable)
