@@ -1,0 +1,170 @@
+#key Code       
+"""
+def getkey():
+    total = 0
+    for i in range(5):
+        for j in range(3):
+            if i + j == 5:
+                total += i + j
+            else:
+                total -= (i - j)
+
+    counter = 0
+    while counter <5:
+        if total < 13:
+            total += 1
+        elif total > 13:
+            total -= 1
+        else:
+            counter += 2  
+    
+    return total  """
+
+
+"""
+#Encrypt code
+def encrypt(text, key):
+    encrypted_text = ""
+    for char in text:
+        if char.isalpha():
+            shifted = ord(char) + key
+            if char.islower():
+                if shifted >ord('z'):
+                    shifted -= 26
+                elif shifted < ord('a'):
+                    shifted += 26
+            elif char.isupper():
+                if shifted > ord('Z'):
+                    shifted -= 26
+                elif shifted < ord('A'):
+                    shifted += 26
+            encrypted_text += chr(shifted)
+        else:
+            encrypted_text += char
+    return encrypted_text"""
+
+#Decrypt code
+"""
+def decrypt(text, key):
+    decrypted_text = ""
+    count = 0
+    for lines in text:
+        words = lines.split()
+        for words in text:
+            letters = [x for x in words]
+            for i in letters:
+                if i.isalpha():
+                    shifted = ord(i) - key
+                    if i.islower():
+                        if shifted < ord('a'):
+                            shifted += 26
+                        elif shifted > ord('z'):
+                            shifted -= 26
+                    elif i.isupper():
+                        if shifted < ord('A'):
+                            shifted += 26
+                        elif shifted > ord('Z'):
+                            shifted -= 26
+                    decrypted_text += chr(shifted)
+                else:
+                    decrypted_text += i
+                    print(i)
+    return decrypted_text 
+
+key = getkey()
+readtext = open("encrypted_code.txt",'r')
+decrypted_code = decrypt(readtext, key)
+writefile = open("Decoded_text.txt", 'w')
+writefile.write(decrypted_code)
+writefile.close  
+ 
+#Encrypted code"""
+
+"""
+tybony_inevnoyr = 100
+zl_qvpg = {'xr11': 'inyhr1', 'xr12': 'inyhr2', 'xr13': 'inyhr3'}
+
+qrs cebprff_ahzoref():
+    tybony tybony_inevnoyr 
+    ybpny_inevnoyr = 5
+    ahzoref= [1, 2, 3, 4, 5]
+    
+    juvyr ybpny_inevnoyr > >:
+        vs ybpny_inevnoyr % 2 == 0: 
+            ahzoref.erzbir(ybpny_inevnoyr)
+        ybpny_inevnoyr = 1
+    
+    erghea ahzoref
+    
+zl_frg = {1, 2, 3, 4, 5, 5, 4, 3, 2, 1} 
+erfhyg= cebprff_ahzoref (ahzoref=zl_frg)
+
+qrs zbqvsl_qvpg():
+    ybpny_inevnoyr = 10 
+    zl_qvpg['xr14'] = ybpny_inevnoyr
+    
+zbqvsl_qvpg(5)
+
+qrs hcqngr_tybony():
+    tybony tybony_inevnoyr
+    tybony_inevnoyr += 10
+    
+sbe v va enatr(5):
+    cevag(v)
+    V += 1
+
+vs z1_frg vf abg Abar naq z1_qvpg['xr14'] == 10: 
+    cevag("Pbaqvgvba zrg!")
+    
+vs 5 abg va zl_qvpg:
+    cevag("5 abg sbhaq va gur qvpgvbanel!")
+    
+cevag(tybony_inevnoyr)
+cevag(zl_qvpg)
+cevag(zl_frg)"""
+
+#Decrypted Code
+#Edits are explained in comments below
+my_dict = {'ke11': 'value1', 'ke12': 'value2', 'ke13': 'value3'}
+
+global_variable = 0 #Moved the definition of global_variable out of the function
+
+def process_numbers():
+    local_variable = 5
+    numbers= [1, 2, 3, 4, 5]
+    
+    while local_variable > 1: #Fixed a typo and added maximum value of 1 to while statement. 
+        if local_variable % 2 == 0: 
+            numbers.remove(local_variable)
+        local_variable = 1
+    
+    return numbers
+    
+my_set = {1, 2, 3, 4, 5, 5, 4, 3, 2, 1} 
+result = process_numbers () #Removed the argument given to the function
+
+def modify_dict(new_value): #Added an argument to the function
+    local_variable = new_value #Removed the local_variable set value of 10 , made it equal to new_value that gets assigned a value from the argument.
+    my_dict['ke14'] = local_variable
+    
+modify_dict(5) 
+
+def update_global():
+    global global_variable
+    global_variable += 10
+ 
+update_global() #Added to carry out the function 
+    
+for i in range(5): #Changed uppercase I to lower case i  
+    print(i)
+    i += 1
+
+if my_set is not None and my_dict['ke14'] == 10: #Corrected m1 typo for both variables to my
+    print("Condition met!")
+    
+if 5 not in my_dict.values(): #Added values attribute to check the my_dict Values instead of keys
+    print("5 not found in the dictionary!")
+    
+print(global_variable)
+print(my_dict)
+print(my_set)
