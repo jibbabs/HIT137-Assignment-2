@@ -8,7 +8,7 @@
 
 writefile = open("HIT137-Assignment-2\Question 1\Combined_text_file.txt", 'w')
 
-#This function opens a file containing text which is provided by the parameter when the funtiton is called, and then copies the text into a new txt file named Combined_Text_File.
+#This function opens a file containing text which is provided by the parameter when the funtiton is called, and then copies the text into the open text file.
 def text_extract(filename):
     readtext = open(filename,'r')
     sum1=0
@@ -55,7 +55,7 @@ for line in readfile:
             else:
                 worddict[word] = 1
 
-#The dictionary is sorted with words with most occurrences to least occurrences.                
+#The dictionary is sorted with words with most common words to least common words.                
 sorteddict = dict(sorted(worddict.items(), key=lambda item: item[1], reverse = True))
 top30words = {k: sorteddict[k] for k in list(sorteddict)[:30]}
 
@@ -70,5 +70,5 @@ for line in top30words:
 writefile.close        
 print ("Complete")
 
-"""----- Task 1.3.2 -----"""
+"""----- Task 1.3.2 ----"""
 #Our Team was not able complete this task of the assignment.
