@@ -3,8 +3,8 @@
 #Group Members:
 #[Alex Tarrant] - [S255441]
 #[Jason Yun] - [S364369]
-
-"""----- 3.1 -----"""
+"""----- Question 3 ----"""
+"""----- Task 3.1 -----"""
 #Key code generator for Encryption/decryption functions      
 def getkey(): #The original code was converted into a function to ouput a key value when called.
     total = 0
@@ -48,7 +48,7 @@ def encrypt(text, key):
     return encrypted_text
 
 
-"""----- 3.2 -----"""
+"""----- Task 3.2 -----"""
 #Decrypt code function.
 #The original encryption code was reversed to create the decryption code. Some changes were required to seperate the letters and carry out the isalpha function.
 def decrypt(text, key):
@@ -87,7 +87,7 @@ writefile = open("HIT137-Assignment-2\Question3\Decoded_text.txt", 'w')
 writefile.write(decrypted_code)
 writefile.close  
  
-"""----- 3.3 -----"""
+"""----- Task 3.3 -----"""
 #Decrypted Code
 #The decrypted code was extracted from the Decoded_text file from the previous function and entered below.
 #The corrections are outlined in the comments.
