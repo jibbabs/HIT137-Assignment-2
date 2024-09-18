@@ -6,7 +6,7 @@
 """----- Question 1 ----""" 
 """----- Task 1.1 -----"""
 
-writefile = open("Combined_text_file.txt", 'w')
+writefile = open("HIT137-Assignment-2\Question 1\Combined_text_file.txt", 'w')
 
 #This function opens a file containing text which is provided by the parameter when the funtiton is called, and then copies the text into a new txt file named Combined_Text_File.
 def text_extract(filename):
@@ -26,7 +26,7 @@ text_extract("CSV4.csv")
 writefile.close        
 print ("Complete")
 
-"""----- Task 1.2 -----""" 
+"""----- Task 1.2 -----"""
 #Ensure the following commands are exectued in the command line or terminal to install the libraries
 """
 pip install scispacy
@@ -38,8 +38,8 @@ cd biobert; pip install -r requirements.txt
 """
 
 """----- Task 1.3.1 -----"""
-"""
-readfile = open("HIT137-Assignment-2\Question 1\Combined_text_file.txtCombined_text_file.txt", 'r')
+#This code opens the combined text file and separates the individual words, every word is added to a the new dictionary and counted.
+readfile = open("HIT137-Assignment-2\Question 1\Combined_text_file.txt", 'r')
 sum1=0
 worddict = {}
 for line in readfile:
@@ -49,7 +49,26 @@ for line in readfile:
         word = word.lower() 
         seperatewords = word.split(" ") 
         for word in seperatewords:
+            
             if word in worddict:
                 worddict[word] = worddict[word] + 1
             else:
-                worddict[word] = 1"""
+                worddict[word] = 1
+
+#The dictionary is sorted with words with most occurrences to least occurrences.                
+sorteddict = dict(sorted(worddict.items(), key=lambda item: item[1], reverse = True))
+top30words = {k: sorteddict[k] for k in list(sorteddict)[:30]}
+
+#The top 30 most common words are written into a CSV file.
+writefile = open("Top_30_Words.csv", 'w')
+writefile.write("The top 30 most common words in the CSV files are: \n")
+for line in top30words:
+        wordlist = line.split()
+        for word in wordlist:
+            writefile.write(word + ":" + str(top30words.get(word)) + " \n")
+
+writefile.close        
+print ("Complete")
+
+"""----- Task 1.3.2 -----"""
+#Our Team was not able complete this task of the assignment.
