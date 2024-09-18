@@ -60,7 +60,7 @@ sorteddict = dict(sorted(worddict.items(), key=lambda item: item[1], reverse = T
 top30words = {k: sorteddict[k] for k in list(sorteddict)[:30]}
 
 #The top 30 most common words are written into a CSV file.
-writefile = open("Top_30_Words.csv", 'w')
+writefile = open("HIT137-Assignment-2\Question 1\Top_30_Words.csv", 'w')
 writefile.write("The top 30 most common words in the CSV files are: \n")
 for line in top30words:
         wordlist = line.split()
